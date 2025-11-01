@@ -1,0 +1,14 @@
+.book-now-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #b5651d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.book-now-btn:hover {
+    background: #a0522d;
+}

@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styling */
+header {
+    background-color: #8B4513; /* Deep brown for an earthy feel */
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #f39c12; /* Hover effect for header */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    animation: fadeIn 1s ease-out;
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav a:hover {
+    color: #f39c12;
+    transform: translateY(-5px); /* Lift on hover */
+}
+
+/* Gallery Styling */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Individual Design Item */
+.design {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.design img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #8B4513; /* Accent line for design */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.design img:hover {
+    opacity: 0.8; /* Slight transparency effect */
+    transform: scale(1.03); /* Zoom effect on image */
+}
+
+.book-now-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #8B4513;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-now-btn:hover {
+    background-color: #f39c12;
+    transform: translateY(-3px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Loading Animation for Button */
+.book-now-btn:active {
+    animation: buttonClick 0.2s ease-in-out;
+}
+
+/* Button Click Animation */
+@keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Header Fade In Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header nav a {
+        font-size: 1rem;
+        margin: 0 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
+
+    .book-now-btn {
+        padding: 12px;
+    }
+}

@@ -1,0 +1,85 @@
+/* Basic Styles for the Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+section.accessory-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.accessory {
+    width: 22%;
+    margin: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.accessory img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+button {
+    background-color: #f06d6d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e05c5c;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #3e3e3e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

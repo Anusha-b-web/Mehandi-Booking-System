@@ -1,0 +1,51 @@
+/* book.css */
+
+/* General Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-top: 100px;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Link Style */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for Link */
+a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Center the content */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

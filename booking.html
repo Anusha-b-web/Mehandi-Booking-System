@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Calendar</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+    <header>
+        <h1>Book Your Mehendi Appointment</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="booking.html">Book Now</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 id="selected-design">Select Your Booking Date</h2>
+        
+        <!-- Date picker for selecting booking date -->
+        <input type="date" id="bookingDate">
+        
+        <!-- Confirm booking button -->
+        <button id="bookNow">Confirm Booking</button>
+        
+        <!-- List of already booked dates -->
+        <h3>Booked Dates:</h3>
+        <ul id="bookingsList"></ul>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+        import { getDatabase, ref, set, get, child, push, remove } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+
+        // 🔹 Firebase Configuration (Replace with your credentials)
+        const firebaseConfig = {
+    apiKey: "AIzaSyDaSWd5MiyTH87wPN6D8olGFI9ZduPbG58",
+    authDomain: "app1-832c1.firebaseapp.com",
+    databaseURL: "https://app1-832c1-default-rtdb.firebaseio.com",
+    projectId: "app1-832c1",
+    storageBucket: "app1-832c1.firebasestorage.app",
+    messagingSenderId: "668966971517",
+    appId: "1:668966971517:web:2342fa5bb3670fad446914",
+    measurementId: "G-B3SQTWR5GM"
+  };
+
+        // 🔹 Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // 🔹 Get Design Name from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const designName = urlParams.get("design") || "Not Selected"; // Default if missing
+        console.log("Extracted design name:", designName);
+
+        // 🔹 Update heading based on selected design
+        document.getElementById("selected-design").innerText = `Booking for: ${designName}`;
+
+        // 🔹 Function to Load and Display All Bookings
+        function loadBookings() {
+            const bookingsList = document.getElementById("bookingsList");
+            bookingsList.innerHTML = ""; // Clear previous list
+
+            const bookingsRef = ref(database, "bookings");
+            get(bookingsRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    const bookings = snapshot.val();
+                    Object.keys(bookings).forEach((key) => {
+                        const booking = bookings[key];
+                        const bookingItem = document.createElement("li");
+                        bookingItem.textContent = `${booking.design} booked for ${booking.date}`;
+
+                        // 🔹 Create Delete Button
+                        const deleteIcon = document.createElement("span");
+                        deleteIcon.textContent = " 🗑️ ";
+                        deleteIcon.classList.add("delete-icon");
+                        deleteIcon.setAttribute("data-key", key);
+                        deleteIcon.style.cursor = "pointer";
+
+                        // 🔹 Delete Booking on Click
+                        deleteIcon.addEventListener("click", () => deleteBooking(key));
+
+                        bookingItem.appendChild(deleteIcon);
+                        bookingsList.appendChild(bookingItem);
+                    });
+                } else {
+                    bookingsList.innerHTML = "<li>No bookings found</li>";
+                }
+            }).catch((error) => {
+                console.error("Error loading bookings:", error);
+            });
+        }
+
+        // 🔹 Function to Delete a Booking
+        function deleteBooking(key) {
+            const bookingRef = ref(database, `bookings/${key}`);
+            remove(bookingRef).then(() => {
+                console.log("Booking deleted successfully");
+                loadBookings(); // Refresh list
+            }).catch((error) => {
+                console.error("Error deleting booking:", error);
+            });
+        }
+
+        // 🔹 Handle Booking Confirmation
+        document.getElementById("bookNow").addEventListener("click", function () {
+            const selectedDate = document.getElementById("bookingDate").value;
+
+            if (!selectedDate) {
+                alert("Please select a date.");
+                return;
+            }
+
+            if (designName === "Not Selected") {
+                alert("No design selected. Please go back and choose a design.");
+                return;
+            }
+
+            const newBooking = {
+                design: designName,
+                date: selectedDate
+            };
+
+            const bookingsRef = ref(database, "bookings");
+            push(bookingsRef, newBooking).then(() => {
+                console.log("Booking saved successfully!");
+                loadBookings();
+                document.getElementById("bookingDate").value = "";
+            }).catch((error) => {
+                console.error("Error saving booking:", error);
+            });
+        });
+
+        // 🔹 Load Bookings on Page Load
+        loadBookings();
+    </script>
+
+</body>
+</html>

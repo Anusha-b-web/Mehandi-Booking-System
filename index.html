@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehendi Designs</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mehendi Design Gallery</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="booking.html">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="design">
+            <img src="https://s1.dmcdn.net/v/WK9Hc1cIsOr1otZew/x720" alt="Mehendi Design 1">
+            <button class="book-now-btn" onclick="bookNow('Mehendi Design 1')">Book Now</button>
+        </div>
+        <div class="design">
+            <img src="https://www.jansatta.com/wp-content/uploads/2024/08/3bce4cabe8ddd849d7cd10a5a3f9daed.jpg?w=350?w=456" alt="Mehendi Design 2">
+            <button class="book-now-btn" onclick="bookNow('Mehendi Design 2')">Book Now</button>
+        </div>
+        <div class="design">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNltTX9YqujoMG2cHBg64-hxBcdf_kWj4Qn_N-wG4LHCLl83pEh7tNRucDcb6frpZqwXg&usqp=CAU" alt="Mehendi Design 3">
+            <button class="book-now-btn" onclick="bookNow('Mehendi Design 3')">Book Now</button>
+        </div>
+        <div class="design">
+            <img src="https://s1.dmcdn.net/v/WK9Hc1cIsOr1otZew/x720" alt="Mehendi Design 4">
+            <button class="book-now-btn" onclick="bookNow('Mehendi Design 4')">Book Now</button>
+        </div>
+    </section>
+
+    <script>
+        function bookNow(designName) {
+            // Redirect to booking page and pass the design name in the URL
+            window.location.href = `booking.html?design=${encodeURIComponent(designName)}`;
+        }
+    </script>
+
+</body>
+</html>

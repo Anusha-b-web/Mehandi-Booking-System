@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4E1D2; /* Soft peach background */
+    color: #333;
+    padding: 20px;
+    background-image: url('https://example.com/cute-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #FF6F61; /* Coral pink color */
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF6F61;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: #FF6F61;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #FF3B2A;
+}
+
+/* Container for Content */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Soft white background for content */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title for Booking Section */
+h2#selected-design {
+    font-size: 1.8rem;
+    color: #FF6F61;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Date Picker Styling */
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #FF6F61; /* Coral border */
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: #FF3B2A; /* Darker coral when focused */
+    box-shadow: 0 0 8px rgba(255, 59, 42, 0.5);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF6F61;
+    color: #fff;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #FF3B2A;
+    transform: scale(1.05);
+}
+
+/* Booked Dates List */
+h3 {
+    font-size: 1.4rem;
+    color: #FF6F61;
+    margin-bottom: 10px;
+}
+
+ul#bookingsList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul#bookingsList li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#bookingsList li .delete-icon {
+    cursor: pointer;
+    color: #FF3B2A;
+    font-size: 1.2rem;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+ul#bookingsList li .delete-icon:hover {
+    color: #FF6F61;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    input[type="date"], button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}

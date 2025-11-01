@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f4f4f9, #d3e0f0); /* Soft gradient */
+    color: #333;
+    padding: 20px;
+    background-image: url('https://example.com/your-image.jpg'); /* Add your image URL here */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;  /* Ensures the background image covers the entire page */
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Accent color for the title */
+}
+
+nav a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #ffb200;
+}
+
+/* Booking Form Section */
+.booking-form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    background-image: url('data:image/jpeg;base64,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'); /* Form background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.booking-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adding text shadow for effect */
+}
+
+/* Form Labels */
+label {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Form Inputs and Textarea */
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, textarea:focus {
+    border-color: #ffcc00; /* Golden focus border */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
+/* Submit Button Styles */
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffcc00;
+    color: #fff;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffb200; /* Darker shade for hover */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Selected Accessory Display */
+#selected-accessory {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Background Image for Specific Elements */
+.booking-form {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url('https://example.com/form-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #ffcc00;
+    --secondary-color: #ffb200;
+    --tertiary-color: #ff6600;
+    --text-color: #333;
+    --background-color: #f4f4f9;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .booking-form {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .booking-form h2 {
+        font-size: 1.6rem;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,185 @@
+/* Global Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #8B4513;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Accessory Gallery Styling */
+.accessory-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Header for the accessories section */
+.accessory-gallery h2 {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Individual Accessory Styling */
+.accessory {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.accessory:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.accessory img {
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.accessory img:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
+.accessory h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.accessory p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #777;
+    text-align: center;
+}
+
+/* Button Styling */
+button {
+    background-color: #8B4513;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #f39c12;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #8B4513;
+    color: white;
+    text-align: center;
+    padding: 0px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .accessory-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accessory {
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Hover Effects for Button and Image */
+.accessory:hover img {
+    transform: scale(1.1); /* Slight zoom-in effect for images */
+}
+
+button:hover {
+    background-color: #f39c12;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Transition for Images */
+.accessory img {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Enha
